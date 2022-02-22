@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image slider</title>
+</head>
+<body>
+    <button onclick="slides()">Click here</button>
+    <img id="image" src="./images/baby.jpg" height="400" width="700" alt="images">
+    <button onclick="stop()">stop</button>
+    <script>
+        var arr = ["./images/bird.jpg", "./images/chain.jpg", "./images/lion.jpg", "./images/panda.jpg", "./images/baby.jpg"];
+        var image = document.getElementById("image");
+        count = 0;
+        function counter() {
+            if (count <= arr.length-1) {
+                console.log(count); 
+                image.src = arr[count];
+                count++;
+            }else{
+                count=0;
+            }
+        }
+        function slides() {
+            interval = setInterval(counter, 3000);
+        }
+        function stop(){
+            clearInterval(interval);
+        }
+    </script>
+   
+</body>
+</html>
